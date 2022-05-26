@@ -1,0 +1,9 @@
+body{
+  background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+     background-size: cover;
+     height:800px;
+     padding:40px;
+}
+.search-list{
+  padding-right:1000px ;
+}

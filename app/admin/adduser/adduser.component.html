@@ -1,0 +1,146 @@
+<body  style="background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+background-size:cover;" >
+<section class="wh-90 gradient-custom ">
+  <div class="container py-5 h-10">
+    <div class="row justify-content-center align-items-center h-`100">
+      <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card-body p-4 p-md-5 text-center">
+            <div class="container d-flex justify-content-center mt-5">
+              <div class="card">
+           <i> <h2 class="mb-4 pb-2 pb-md-0 mb-md-5">ADD USER</h2><hr></i>
+            <form  [formGroup]="signupform" (ngSubmit)="SaveUser()">
+              <div class="row">
+                <div class="col-md-6 mb-8">
+                  <div class="form-outline">
+                    <input formControlName="firstname" type="text" id="firstname" class="form-control form-control-lg" placeholder="FirstName" ngModel maxlength="15" minlength="4" pattern="^[a-zA-Z]$"/>
+                    <div *ngIf="signupform.controls['firstname'].invalid && (signupform.controls['firstname'].dirty || signupform.controls['firstname'].touched)">
+                      <div *ngIf="signupform.controls['firstname'].errors?.['required']" style="color: red;">FirstName is Required </div>
+                      <div *ngIf="signupform.controls['firstname'].errors?.['maxlength']">Maxlength is required</div>
+                      <div *ngIf="signupform.controls['firstname'].errors?.['minlength']">minlength is required</div>
+                      <div *ngIf="signupform.controls['firstname'].errors?.['pattern']"> Character Only</div>
+
+                    </div>
+                  </div>
+                </div>
+             <div class="col-md-6 mb-4">
+           <div class="form-outline">
+      <input  formControlName="lastname" type="text" id="lastName" class="form-control form-control-lg" placeholder="LastName" ngModel maxlength="15" minlength="4" pattern="^[a-zA-Z]$"/>
+      <div *ngIf="signupform.controls['lastname'].invalid && (signupform.controls['lastname'].dirty || signupform.controls['lastname'].touched)">
+        <div *ngIf="signupform.controls['lastname'].errors?.['required']" style="color:red;">LastName is Required </div>
+        <div *ngIf="signupform.controls['lastname'].errors?.['maxlength']">Maxlength is required</div>
+        <div *ngIf="signupform.controls['lastname'].errors?.['minlength']">minlength is required</div>
+        <div *ngIf="signupform.controls['lastname'].errors?.['pattern']"> Character Only</div>
+
+      </div>
+       </div>
+        </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                   <input formControlName="Email" type="text" id="email" class="form-control form-control-lg" placeholder="Email" ngModel required=""/>
+                   <div *ngIf="signupform.controls['Email'].invalid && (signupform.controls['Email'].dirty || signupform.controls['Email'].touched)">
+                    <div *ngIf="signupform.controls['Email'].errors?.['required']" style="color:red;">Email is Required </div>
+                  </div>
+                   </div>
+                   </div>
+                   <div class="col-md-6 mb-4">
+                   <div class="form-outline">
+
+                    <input formControlName="phone" type="text" id="phonenumber" class="form-control form-control-lg" placeholder="Phone Number"  ngModel maxlength="10"  pattern="^[0-9]+$" />
+                    <div *ngIf="signupform.controls['phone'].invalid && (signupform.controls['lastname'].dirty || signupform.controls['phone'].touched)">
+                      <div *ngIf="signupform.controls['phone'].errors?.['required']" style="color:red;">PhoneNumber is Required </div>
+                      <div *ngIf="signupform.controls['phone'].errors?.['maxlength']">Maxlength is required</div>
+                      <div *ngIf="signupform.controls['phone'].errors?.['pattern']"> Numbers  Only</div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+                 <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+
+                    <input formControlName="userid" type="text" id="number" class="form-control form-control-lg" placeholder="UserId"/>
+                    <div *ngIf="signupform.controls['userid'].invalid && (signupform.controls['userid'].dirty || signupform.controls['userid'].touched)">
+                      <div *ngIf="signupform.controls['userid'].errors?.['required']" style="color:red;">UserId is Required </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-check">
+
+                    <input formControlName="IsAdmin" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>IsAdmin
+                    <div *ngIf="signupform.controls['IsAdmin'].invalid && (signupform.controls['IsAdmin'].dirty || signupform.controls['IsAdmin'].touched)">
+                      <div *ngIf="signupform.controls['IsAdmin'].errors?.['required']" style="color:red;">Admin is Required </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+
+                    <input formControlName="username" type="text" id="username" class="form-control form-control-lg" placeholder="UserName"/>
+                    <div *ngIf="signupform.controls['username'].invalid && (signupform.controls['username'].dirty || signupform.controls['username'].touched)">
+                      <div *ngIf="signupform.controls['username'].errors?.['required']" style="color:red;">UserName is Required </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+
+                    <input formControlName="password" type="password" id="password" class="form-control form-control-lg" placeholder="password"/>
+                    <div *ngIf="signupform.controls['password'].invalid && (signupform.controls['password'].dirty || signupform.controls['password'].touched)">
+                      <div *ngIf="signupform.controls['password'].errors?.['required']" style="color:red;">password is Required </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+              <div class="form-outline">
+                <input formControlName="Address"  type="text" id="name" class="form-control form-control-lg" placeholder="Address"/>
+                <div *ngIf="signupform.controls['Address'].invalid && (signupform.controls['Address'].dirty || signupform.controls['Address'].touched)">
+                  <div *ngIf="signupform.controls['Address'].errors?.['required']" style="color:red;">Address is Required </div>
+                  </div>
+              </div>
+              </div>
+                 <div>
+                <div class="form-outline">
+                  <label class="form-label" for="Mapaddresslink"></label>
+                  <select formControlName="user_Type" class="form-select" aria-label="Default select example">
+                    <option selected>User Type</option>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                  </select>
+                  <div *ngIf="signupform.controls['user_Type'].invalid && (signupform.controls['user_Type'].dirty || signupform.controls['user_Type'].touched)">
+                    <div *ngIf="signupform.controls['user_Type'].errors?.['required']" style="color:red;">UserType is Required </div>
+                    </div>
+                  </div><br>
+                <div class="form-outline">
+
+                  <input formControlName="Mapaddresslink" type="text" id="Mapaddresslink" class="form-control form-control-lg" placeholder="Mappaddresslink"/>
+                  <div *ngIf="signupform.controls['Mapaddresslink'].invalid && (signupform.controls['Mapaddresslink'].dirty || signupform.controls['Mapaddresslink'].touched)">
+                    <div *ngIf="signupform.controls['Mapaddresslink'].errors?.['required']" style="color:red;">Mappaddresslink is Required </div>
+                    </div>
+                </div>
+              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounde mt-5" width="250px" [src]="url">
+                <input formControlName="profileimage" type="file"(change)="onselectfile($event)">
+                <div *ngIf="signupform.controls['profileimage'].invalid && (signupform.controls['profileimage'].dirty || signupform.controls['profileimage'].touched)">
+                  <div *ngIf="signupform.controls['profileimage'].errors?.['required']" style="color:red;">ProfileImage is Required </div>
+                  </div>
+              </div>
+                <div class="text-center">
+                <button type="button" class="btn btn-primary btn-lg"(click)="SaveUser()">Add User</button>
+                </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+</body>

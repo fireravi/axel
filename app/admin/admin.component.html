@@ -1,0 +1,47 @@
+<body  style="background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+background-size:cover;" >
+<nav class="navbar navbar-expand-lg navbar-dark"style="background-color:gray">
+	<div class="container-fluid">
+	  <a class="navbar-brand" href="#">AXEL ONE</a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">Home</a>
+		  </li>
+		   <li class="nav-item dropdown"*ngIf="admin!='user'">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			  Admin
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"style="background-color:gray">
+			  <li><a class="dropdown-item" routerLink="/user">View User</a></li>
+			  <li><a class="dropdown-item" routerLink="/adduser">Add User</a></li>
+			  <li><a class="dropdown-item" routerLink="/view">View Role</a></li>
+			  <li><a class="dropdown-item" routerLink="/role">Add Role</a></li>
+			  <li><a class="dropdown-item" routerLink="/edit">Edit Details</a></li>
+			</ul>
+		  </li>
+		  <li>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page"  routerLink="/edit">UserEditDetails</a>
+		  </li>
+
+      <li class="nav-item avatar-active" style="margin-left: 800px;">
+      </li>
+      <li class="nav-item dropdown" >
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </a>
+        <ul class="dropdown-menu" >
+         <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/login" style="background-color:rgb(98, 95, 91) ;">logout</a>
+        </ul>
+      </li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+  </body>
+

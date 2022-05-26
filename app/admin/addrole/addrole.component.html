@@ -1,0 +1,56 @@
+
+<body  style="background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+background-size:cover;" >
+<div id="container">
+<div id="formcontainer">
+
+<a href="#"><img id="cross" src="https://image.flaticon.com/icons/svg/148/148766.svg"></a>
+<p id="text">ADD ROLES TYPE</p>
+<form  [formGroup]="addroleform" >
+<div id="selector">
+<input formControlName="role_Id" type="text" type="tel" placeholder="Role Id">
+<div *ngIf="addroleform.controls['role_Id'].invalid && (addroleform.controls['role_Id'].dirty || addroleform.controls['role_Id'].touched)">
+  <div *ngIf="addroleform.controls['role_Id'].errors?.['required']" style="color:red;">RoleId is Required </div>
+  </div>
+  </div>
+<div id="selector">
+  <input formControlName="role_Name" type="text" type="tel" placeholder="Role Name">
+  <div *ngIf="addroleform.controls['role_Name'].invalid && (addroleform.controls['role_Name'].dirty || addroleform.controls['role_Name'].touched)">
+    <div *ngIf="addroleform.controls['role_Name'].errors?.['required']" style="color:red;">RoleName is Required </div>
+    </div></div>
+  <div id="selector">
+    <input formControlName="role_Uniqid" type="text" type="tel" placeholder="Role Uniqid">
+    <div *ngIf="addroleform.controls['role_Uniqid'].invalid && (addroleform.controls['role_Uniqid'].dirty || addroleform.controls['role_Uniqid'].touched)">
+      <div *ngIf="addroleform.controls['role_Uniqid'].errors?.['required']" style="color:red;">Role Uniq Id is Required </div>
+      </div></div>
+
+          <div id="selector" >
+
+          <select formControlName="role_Type" class="form-select" aria-label="Default select example">
+            <option selected>Role Type</option>
+            <option value="1">A</option>
+            <option value="2">F</option>
+            <option value="3">B</option>
+          </select>
+          <div *ngIf="addroleform.controls['role_Type'].invalid && (addroleform.controls['role_Type'].dirty || addroleform.controls['role_Type'].touched)">
+            <div *ngIf="addroleform.controls['role_Type'].errors?.['required']" style="color:red;">RoleType is Required </div>
+            </div>
+          </div>
+
+          <div id="selector">
+          <select formControlName="role_Status" class="form-select" aria-label="Default select example">
+            <option selected>Role Status</option>
+            <option value="1">Y</option>
+            <option value="2">D</option>
+             </select>
+             <div *ngIf="addroleform.controls['role_Status'].invalid && (addroleform.controls['role_Status'].dirty || addroleform.controls['role_Status'].touched)">
+              <div *ngIf="addroleform.controls['role_Status'].errors?.['required']" style="color:red;">RoleStatus is Required </div>
+              </div>
+            </div>
+<div>
+
+<button id="login" type="save" (click)="SaveRole()" >Add Role</button></div><br>
+</form>
+</div>
+</div>
+</body>

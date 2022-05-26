@@ -1,0 +1,49 @@
+<body  style="background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+background-size:cover;" >
+
+<div id="datatable">
+</div>
+  <h1 class="text-center">USER TOTAL LIST</h1><hr>
+  <div class="search-list">
+    <label class="form-label" for="listsearch">Search</label>
+    <input type="text" name="search" id="listsearch" class="form-control search-field user_Firstname" [(ngModel)]="searchText">
+
+  </div><br>
+  <form >
+<table style="background-color:goldenrod;" class="table table-striped">
+  <thead>
+    <tr>
+      <th [appSort]="user"  data-order="desc" data-name="user_Id">User Id</th>
+      <th [appSort]="user"  data-order="desc" data-name="user_Firstname">User FirstName</th>
+      <th [appSort]="user"  data-order="desc" data-name="user_Lastname">User LastName</th>
+      <th [appSort]="user"  data-order="desc" data-name="user_Email">User Email</th>
+      <th [appSort]="user"  data-order="desc" data-name="user_Address">User Address</th>
+      <th [appSort]="user"  data-order="desc" data-name="user_Username">User Name </th>
+      <th>Buttons</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let view of user | paginate: { itemsPerPage: 10, currentPage: p } | search:searchText">
+
+      <td>{{view.user_Id}} </td>
+      <td>{{view.user_Firstname  | titlecase}} </td>
+      <td>{{view.user_Lastname}} </td>
+      <td>{{view.user_Email}} </td>
+      <td>{{view.user_Address}} </td>
+      <td>{{view.user_Username}} </td>
+      <ul class="list-inline m-0">
+        <li class="list-inline-item">
+            <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"routerLink="/edit/{{view.user_Id}}">Edit</i></button>
+        </li>
+        <li class="list-inline-item">
+            <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" >Delete</i></button>
+        </li>
+    </ul>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</form>
+</body>

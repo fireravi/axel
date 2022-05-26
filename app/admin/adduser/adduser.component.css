@@ -1,0 +1,12 @@
+body{
+  background-image:url('https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473__340.jpg');
+     -size: cover;
+     height:1200px;
+     padding:20px;
+}
+.card{
+  background-image: url("https://i.imgur.com/5ehnBAe.jpg");
+  color: white;
+  width: 2000px;
+  border-radius: 20px;
+}
